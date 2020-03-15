@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DWH_Practice</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4bab2c19-a951-46be-9068-f1a2995872b4}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>DWH_Practice</RootNamespace>
+    <AssemblyName>DWH_Practice</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="STG" />
+    <Folder Include="AMDW" />
+    <Folder Include="DMDW" />
+    <Folder Include="STG\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="STG\Tables\User_PersonGroup.sql" />
+    <Build Include="STG\Tables\User_Person.sql" />
+    <Build Include="STG\Tables\User_NotifierType_Enum.sql" />
+    <Build Include="STG\Tables\User_Attribute.sql" />
+    <Build Include="STG\Tables\User_AttributeValue_User_Attribute_Question_FixedAnswer_XRef.sql" />
+    <Build Include="STG\Tables\User_AttributeValue.sql" />
+    <Build Include="STG\Tables\User_AttributeType_Enum.sql" />
+    <Build Include="STG\Tables\User_Attribute_QuestionGroup.sql" />
+    <Build Include="STG\Tables\User_Attribute_Question_FixedAnswer.sql" />
+    <Build Include="STG\Tables\User_Attribute_Question.sql" />
+    <Build Include="STG\Tables\User_Attribute_PersonalOffer.sql" />
+    <Build Include="STG\Tables\User_Attribute_PartnerInfo.sql" />
+    <Build Include="STG\Tables\User_Attribute_Notifier.sql" />
+    <Build Include="STG\Tables\TargetGroup_TargetGroup.sql" />
+    <Build Include="STG\Tables\TargetGroup_CalculationPerson.sql" />
+    <Build Include="STG\Tables\TargetGroup_Calculation.sql" />
+    <Build Include="STG\Tables\Push_Device.sql" />
+    <Build Include="STG\Tables\Pay_Transaction.sql" />
+    <Build Include="STG\Tables\Pay_Queue.sql" />
+    <Build Include="STG\Tables\Pay_Payment.sql" />
+    <Build Include="STG\Tables\Pay_Operation_Description.sql" />
+    <Build Include="STG\Tables\Pay_Operation.sql" />
+    <Build Include="STG\Tables\Pay_Currency.sql" />
+    <Build Include="STG\Tables\Pay_Commission.sql" />
+    <Build Include="STG\Tables\Pay_AccountGroup.sql" />
+    <Build Include="STG\Tables\Pay_Account.sql" />
+    <Build Include="STG\Tables\Partner_PaymentSystem.sql" />
+    <Build Include="STG\Tables\Partner_Partner.sql" />
+    <Build Include="STG\Tables\Partner_Merchant_AdditionalInfo.sql" />
+    <Build Include="STG\Tables\Partner_Merchant.sql" />
+    <Build Include="STG\Tables\Partner_LoyaltyProgram_Device.sql" />
+    <Build Include="STG\Tables\Partner_LoyaltyProgram_Xref.sql" />
+    <Build Include="STG\Tables\Partner_LoyaltyProgram.sql" />
+    <Build Include="STG\Tables\Partner_Legal.sql" />
+    <Build Include="STG\Tables\Partner_GoodsCatalog.sql" />
+    <Build Include="STG\Tables\Partner_Device.sql" />
+    <Build Include="STG\Tables\Partner_CatalogMerchantInfo.sql" />
+    <Build Include="STG\Tables\Partner_CatalogBrandInfo.sql" />
+    <Build Include="STG\Tables\Operation_Purchase.sql" />
+    <Build Include="STG\Tables\Operation_PurchaseCalculateInfo.sql" />
+    <Build Include="STG\Tables\Operation_Purchase_OperationResult.sql" />
+    <Build Include="STG\Tables\Operation_Pay.sql" />
+    <Build Include="STG\Tables\Operation_ChequePositionAttribute_Name.sql" />
+    <Build Include="STG\Tables\Operation_ChequePositionAttribute.sql" />
+    <Build Include="STG\Tables\Operation_ChequePosition_Changes.sql" />
+    <Build Include="STG\Tables\Operation_ChequePosition.sql" />
+    <Build Include="STG\Tables\Operation_Batch_Queue.sql" />
+    <Build Include="STG\Tables\Operation_Batch_DeferredOperation.sql" />
+    <Build Include="STG\Tables\Operation_Batch.sql" />
+    <Build Include="STG\Tables\Offer_Category_XRef.sql" />
+    <Build Include="STG\Tables\Offer_Category.sql" />
+    <Build Include="STG\Tables\Offer_Offer.sql" />
+    <Build Include="STG\Tables\Offer_Version.sql" />
+    <Build Include="STG\Tables\Offer_MarketingCampaign.sql" />
+    <Build Include="STG\Tables\Offer_GoodsSetInfo.sql" />
+    <Build Include="STG\Tables\Offer_CounterValue_Changes.sql" />
+    <Build Include="STG\Tables\Offer_ActionGoodsSetDivide.sql" />
+    <Build Include="STG\Tables\Offer_ActionChain.sql" />
+    <Build Include="STG\Tables\Offer_Action.sql" />
+    <Build Include="STG\Tables\OAuth_UserGroupHistory.sql" />
+    <Build Include="STG\Tables\OAuth_UserGroup.sql" />
+    <Build Include="STG\Tables\OAuth_UserActivity.sql" />
+    <Build Include="STG\Tables\OAuth_Application.sql" />
+    <Build Include="STG\Tables\Notify_TriggeredMailingTask.sql" />
+    <Build Include="STG\Tables\Notify_TriggeredMailing.sql" />
+    <Build Include="STG\Tables\Notify_Template.sql" />
+    <Build Include="STG\Tables\Notify_SubscriptionType_Enum.sql" />
+    <Build Include="STG\Tables\Notify_Subscription.sql" />
+    <Build Include="STG\Tables\Notify_MailingTask_Viber.sql" />
+    <Build Include="STG\Tables\Notify_MailingTask_Push.sql" />
+    <Build Include="STG\Tables\Notify_MailingTask_Phone.sql" />
+    <Build Include="STG\Tables\Notify_MailingTask_Mail.sql" />
+    <Build Include="STG\Tables\Notify_MailingTask.sql" />
+    <Build Include="STG\Tables\Notify_MailingOperation.sql" />
+    <Build Include="STG\Tables\Notify_Mailing.sql" />
+    <Build Include="STG\Tables\Merchant_Cashier.sql" />
+    <Build Include="STG\Tables\Limit_Value.sql" />
+    <Build Include="STG\Tables\Limit_Rule.sql" />
+    <Build Include="STG\Tables\Limit_ReachedLog.sql" />
+    <Build Include="STG\Tables\Limit_NotificationLog.sql" />
+    <Build Include="STG\Tables\Limit_Border.sql" />
+    <Build Include="STG\Tables\Limit_Action.sql" />
+    <Build Include="STG\Tables\LifeTimeUsage.sql" />
+    <Build Include="STG\Tables\LifeTimeDefinition.sql" />
+    <Build Include="STG\Tables\LifeTime_RestoredUsage_XRef.sql" />
+    <Build Include="STG\Tables\LifeTime.sql" />
+    <Build Include="STG\Tables\Identity_Identifier_Type.sql" />
+    <Build Include="STG\Tables\Identity_Identifier_Attribute.sql" />
+    <Build Include="STG\Tables\Identity_Identifier.sql" />
+    <Build Include="STG\Tables\Identity_Attribute.sql" />
+    <Build Include="STG\Tables\History_AuditType.sql" />
+    <Build Include="STG\Tables\History_Audit.sql" />
+    <Build Include="STG\Tables\GoodsGroup_GoodsGroup.sql" />
+    <Build Include="STG\Tables\GoodsGroup_Goods.sql" />
+    <Build Include="STG\Tables\GoodsCatalog_Attribute.sql" />
+    <Build Include="STG\Tables\Goods_Catalog.sql" />
+    <Build Include="STG\Tables\Goods_BarCode.sql" />
+    <Build Include="STG\Tables\Goods_AttributeValue.sql" />
+    <Build Include="STG\Tables\Goods_Attribute.sql" />
+    <Build Include="STG\Tables\Geo_Region.sql" />
+    <Build Include="STG\Tables\Geo_Location.sql" />
+    <Build Include="STG\Tables\Geo_City.sql" />
+    <Build Include="STG\Tables\Event_Result_ScheduledActionQueue.sql" />
+    <Build Include="STG\Tables\Event_Result.sql" />
+    <Build Include="STG\Tables\Event_Context_SocialNetworkAction.sql" />
+    <Build Include="STG\Tables\Event_Context_ShowcasePurchase.sql" />
+    <Build Include="STG\Tables\Event_Context_SendPasswordToCheque.sql" />
+    <Build Include="STG\Tables\Event_Context_PurchaseOperation.sql" />
+    <Build Include="STG\Tables\Event_Context_LinkCard.sql" />
+    <Build Include="STG\Tables\Event_Context_ExternalCardReplace.sql" />
+    <Build Include="STG\Tables\Event_Context_ChangeNotifier.sql" />
+    <Build Include="STG\Tables\Event_Context_ChangeCardState.sql" />
+    <Build Include="STG\Tables\Event_Context_BonusLifeTime.sql" />
+    <Build Include="STG\Tables\Event_Activity_PurchaseOperation.sql" />
+    <Build Include="STG\Tables\Event_Activity.sql" />
+    <Build Include="STG\Tables\Device_Type.sql" />
+    <Build Include="STG\Tables\Coupon_History.sql" />
+    <Build Include="STG\Tables\Coupon_CouponPurchase.sql" />
+    <Build Include="STG\Tables\Coupon_CouponPerson.sql" />
+    <Build Include="STG\Tables\Coupon_CouponEmission.sql" />
+    <Build Include="STG\Tables\Coupon_Coupon.sql" />
+    <Build Include="STG\Tables\Card_Emission.sql" />
+    <Build Include="STG\Tables\Card_Category.sql" />
+    <Build Include="STG\Tables\Card_Card.sql" />
+    <Build Include="STG\Tables\Card_BookletEmission.sql" />
+    <Build Include="STG\Tables\Card_Booklet.sql" />
+    <Build Include="STG.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DWH_Practice.refactorlog" />
+  </ItemGroup>
+</Project>

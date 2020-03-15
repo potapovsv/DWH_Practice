@@ -1,0 +1,25 @@
+﻿CREATE TABLE [STG].[Offer_Version]
+(
+	[ID] [int] NOT NULL,
+	[Name] [nvarchar](4000) NOT NULL,
+	[ChangeDate] [datetime2](7) NOT NULL,
+	[CreationDate] [datetime2](0) NOT NULL,
+	[ExpirationLocalDate] [datetime2](7) NULL,
+	[Description] [nvarchar](4000) NULL,
+	[Priority] [int] NOT NULL,
+	[OwnerPersonID] [int] NOT NULL,
+	[LastChangePersonID] [int] NOT NULL,
+	[IsDefault] [bit] NOT NULL,
+	[IsSum] [bit] NOT NULL,
+	[OfferID] [int] NOT NULL,
+	[SourceVersionID] [int] NULL,
+	[ApplyChangesLocalDate] [datetime2](7) NOT NULL,
+	[VCSId] [uniqueidentifier] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[IsAccepted] [bit] NOT NULL,
+	[IsDraftCopy] [bit] NOT NULL,
+	[RejectReason] [nvarchar](4000) NULL,
+	[DraftCopyOrDeletedMark]  AS (case when [isdeleted]=(0) AND [isdraftcopy]=(0) then (0) else [id] end) PERSISTED NOT NULL,
+	[DraftState] [int] NOT NULL,
+	[ApprovalComment] [nvarchar](4000) NULL
+)
